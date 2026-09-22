@@ -1,9 +1,22 @@
 ---
 name: om-journal-calibrator
-description: Use after an OM/quantitative-management paper has passed model audit, novelty audit, and working-paper reconstruction, when the author must choose among Management Science (MS), Manufacturing & Service Operations Management (M&SOM), Production and Operations Management (POM), Operations Research (OR), Marketing Science, and Information Systems Research (ISR), calibrate the framing to the selected venue/department, identify desk-reject risks, and run a live pre-submission audit. This skill is a journal-calibration layer, not a substitute for model verification, novelty assessment, or paper construction.
+description: Use only for explicit journal/venue decisions after the OM research core is stable: e.g., 投哪个期刊、MS还是M&SOM/POM/OR/Marketing Science/ISR、venue routing、department ownership、desk-reject risk、投稿前审计、submission audit. Do not implicitly invoke for ordinary model checking, literature review, paper restructuring, reviewer responses, or general publication-potential discussion unless the user explicitly asks for journal selection/calibration.
 ---
 
 # OM Journal Calibrator
+
+# Invocation policy
+
+This skill is intentionally **manual / conservative**. Do not auto-trigger it from generic phrases such as “发表潜力”, “顶刊标准”, “论文评价”, or “适合发表吗”. Invoke it only when the user explicitly asks for one or more of:
+
+- 投哪个期刊 / 期刊选择 / journal selection;
+- MS vs. M&SOM vs. POM vs. OR vs. Marketing Science vs. ISR;
+- venue routing / department ownership;
+- desk-reject risk by venue;
+- target-journal contribution calibration;
+- pre-submission / submission audit.
+
+When journal calibration is requested together with model verification, novelty audit, or reconstruction, run the research-core task first and calibrate only after those gates are stable.
 
 ## Purpose
 
