@@ -1,11 +1,64 @@
 ---
 name: om-literature-positioning
-description: Position analytical operations-management, management-science, information-systems, and quantitative-marketing research against the closest literature using verified sources and mechanism-level comparisons. Use when the user asks for a literature review, closest-paper search, novelty assessment, contribution matrix, research-gap statement, journal positioning, related-work section, citation verification, or an assessment of whether an OM theory idea is incremental or publishable.
+description: Position analytical OM, management-science, IS, and quantitative-marketing research against verified closest literature using mechanism-level comparisons. Implicitly trigger for 文献定位、查找相关文献、closest paper、novelty comparison、贡献比较、与某篇文章相比、是否重复、研究缺口、literature positioning, related-work comparison, citation verification, or requests to assess whether a theory idea is incremental. Do not trigger for model-proof verification, prose-only polishing, reviewer-response drafting, or journal selection when no literature/novelty comparison is requested.
 ---
 
 # OM Literature Positioning
 
 Identify the nearest intellectual neighbors and define the paper's contribution without exaggeration. Compare mechanisms and decision structures, not only keywords or application settings.
+
+
+# Smart-trigger routing
+
+This skill supports implicit invocation, but only when the task falls inside its ownership boundary.
+
+## Positive trigger phrases / intents
+
+- `文献定位`
+- `查找相关文献`
+- `最接近文献`
+- `closest paper`
+- `novelty comparison`
+- `贡献比较`
+- `与XX比较`
+- `是否重复`
+- `研究缺口`
+- `文献综述`
+- `literature positioning`
+- `related work`
+- `citation verification`
+- `incremental or novel`
+
+## Exclusion conditions
+
+Do **not** implicitly invoke this skill when the user is only asking for:
+
+- 只检查公式、证明或均衡;
+- 只做语言润色;
+- 只写审稿回复且不需要新增文献;
+- 只问投哪个期刊且不要求文献定位;
+
+
+## Ownership
+
+Primary owner: **closest-literature search and novelty substantiation**. If another OM skill more directly owns the requested deliverable, defer to that skill and act only as a supporting gate when needed.
+
+## Cross-Skill routing order
+
+Use the following ownership order to avoid competing implicit invocations:
+
+1. **Reviewer package present** → `om-reviewer-response-builder` owns the user-facing task. It may request support from the auditor or literature-positioning logic, but the response builder integrates the final revision/letter.
+2. **Correctness / proof / equilibrium requested** → `om-theory-model-auditor` runs before any rewriting.
+3. **Closest-literature / novelty requested** → `om-literature-positioning` owns external novelty substantiation. If the novelty claim depends on whether a proposition is mathematically valid, auditor first.
+4. **Full-paper generation or reconstruction requested** → `om-working-paper-builder` runs after any required correctness and novelty gates.
+5. **Journal/venue routing** → do not auto-route to `om-journal-calibrator`; use it only when the user explicitly asks for journal selection, department ownership, venue calibration, or a pre-submission audit.
+
+### Multi-intent examples
+
+- “检查模型并重构全文” → auditor → builder.
+- “逐命题和 Guo (2025) 比较后重构” → auditor when correctness is in scope → literature positioning → builder.
+- “按照审稿意见修改模型并写回复信” → response builder owns the workflow; use auditor for challenged derivations and literature positioning for challenged novelty, then return to response builder.
+- “这篇文章适合投 MS 还是 M&SOM” → journal calibrator only when explicitly requested; do not launch the full research-core pipeline unless the user also asks for it.
 
 ## Required inputs
 

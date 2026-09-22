@@ -1,8 +1,7 @@
 interface:
   display_name: OM Working Paper Builder
   short_description: Build verified analytical OM papers in LaTeX
-  default_prompt: Use $om-working-paper-builder to turn these verified model results
-    and literature notes into a complete analytical OM working paper.
+  default_prompt: Use $om-working-paper-builder to turn these verified model results and literature notes into a complete analytical OM working paper.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
@@ -11,4 +10,4 @@ policy:
   - codex
   - api
   - atlas
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true
