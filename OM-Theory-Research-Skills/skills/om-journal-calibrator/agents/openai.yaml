@@ -1,0 +1,11 @@
+interface:
+  display_name: OM Journal Calibrator
+  short_description: Calibrate explicit journal and venue decisions after the OM research core is stable
+  default_prompt: Use $om-journal-calibrator to route this verified paper among MS, M&SOM, POM, OR, Marketing Science, and ISR and run a venue-specific pre-submission audit.
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: false
