@@ -1,0 +1,14 @@
+interface:
+  display_name: OM Theory Model Auditor
+  short_description: Audit OM models, equilibria, proofs, and robustness
+  default_prompt: Use $om-theory-model-auditor to audit this OM theory model and produce
+    a claim-by-claim verification report.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: false

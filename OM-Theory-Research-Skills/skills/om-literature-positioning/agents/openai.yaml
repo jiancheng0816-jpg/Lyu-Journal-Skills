@@ -1,0 +1,14 @@
+interface:
+  display_name: OM Literature Positioning
+  short_description: Map closest literature and defend contribution boundaries
+  default_prompt: Use $om-literature-positioning to identify the closest papers and
+    build an evidence-backed contribution matrix for this OM model.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: false

@@ -1,514 +1,144 @@
 ---
 name: om-working-paper-builder
-description: Build or reconstruct rigorous analytical OM and quantitative-management working papers after model and novelty audit. Convert verified results into a coherent paper architecture, identify and order headline results, promote the mechanism-bearing model to the main model when necessary, demote tractability-only or overlapping results to benchmarks/appendices, and write the lemma → proposition → mechanism → managerial implication narrative in an MSOM/POM/MS/OR-compatible style.
+description: Build, restructure, and quality-assure complete analytical operations-management and management-science working papers from verified models and source-backed literature, using proposition-level result hierarchy and main-model promotion/demotion when the true mechanism is buried in a benchmark, extension, or robustness section. Use when the user asks for an English working paper, journal-style theoretical manuscript, LaTeX source, compiled PDF, paper restructuring, proposition-and-proof exposition, mechanism and managerial-implication writing, robustness integration, or adaptation toward MSOM, POM, Management Science, or Operations Research.
 ---
 
 # OM Working Paper Builder
 
-## Purpose
+Turn verified analytical results and source-backed positioning into a coherent, reproducible working paper. Preserve correctness across equations, propositions, mechanisms, contributions, figures, and citations.
 
-This skill is the paper-architecture and reconstruction layer for analytical OM and quantitative-management research.
+## Entry gates
 
-It converts a verified research core into a publishable working-paper structure.
+Collect the strongest available versions of:
 
-Required reconstruction workflow:
+- research question, institutional motivation, and target audience;
+- model map, notation, assumptions, equilibrium concept, and source equations;
+- claim ledger from `om-theory-model-auditor` or equivalent verification;
+- proofs, counterexamples, numerical checks, and robustness map;
+- closest-paper matrix and verified references from `om-literature-positioning`;
+- existing LaTeX, bibliography, figures, prior manuscript, and preferred style sample;
+- target journal family, length, proof-placement preference, and desired deliverables.
 
-proposition-level novelty audit
-→ headline result identification
-→ main-model promotion/demotion
-→ paper restructuring.
+If headline results have not been audited, route them through `om-theory-model-auditor` before presenting the paper as verified. If literature claims are not source-backed, route them through `om-literature-positioning`. Continue with an explicitly labeled provisional draft only when the user requests it.
 
-The builder must not merely polish the current section order. It should change the model hierarchy when the existing hierarchy hides the true mechanism.
+## Workflow
 
----
+1. Read `references/reference-paper-writing-standard.md`, `references/paper-architecture.md`, `references/result-writing-protocol.md`, `references/model-promotion-and-paper-reconstruction-protocol.md`, and `references/release-checklist.md`. For Bayesian persuasion, disclosure, information acquisition, or joint information-monetary-lever papers, also read `references/information-design-and-joint-lever-protocol.md`.
+2. Freeze a manuscript contract: research question or connected question ladder, central analytical architecture, two to four headline result groups, contribution boundaries, maintained assumptions, excluded cases, target outlet family, and deliverables.
+3. Build linked maps for the event timeline, result hierarchy, section-to-result allocation, result-to-result dependency chain, vocabulary, and result-to-figure crosswalk; when policy or governance matters, also build a policy-instrument-decision-rights map with stakeholder outcomes. The dependency chain should identify the benchmark for each result, whether the result adds a mechanism, changes an institution, or merely reverses an earlier parameter mapping, and which next question it creates. For information-design papers, add a state-prior-experiment-posterior-action map and a preference-alignment map showing how each actor's desired action changes with beliefs. Give each section one analytical job and trace every headline claim and visual panel to a verified proposition or evidence record.
+4. Choose the story architecture that fits the verified model. Use a mechanism-progression architecture for opposing forces, continuation values, reversals, or equilibrium selection; use a policy-and-instrument architecture for instrument substitution, mandatory versus voluntary adoption, staged endogenization, or allocation of decision rights; use a joint-lever architecture when an informational lever and a monetary or operational lever are first isolated and then optimized together. Combine architectures only when each organizes genuine headline results.
+5. Draft the title, abstract, and introduction only after the result hierarchy is stable. Ensure that motivation, research question, findings, contributions, and implications use the same vocabulary as the model. Use the introduction's finding groups as a faithful map of the main analysis rather than as a separate sales pitch.
+6. Organize related literature by decision problem and mechanism. Use only verified citations and calibrated novelty language. Distinguish a different mechanism from a different setting or notation.
+7. State the model with institutional mapping, a complete timeline, actor-specific decisions, information, objectives, feasibility, assumptions, equilibrium concept, and notation table. In information-design models, distinguish information acquisition from experiment design and disclosure; define the state, prior, commitment, experiment set, signals, posteriors, Bayes-plausibility condition, receiver action, and sender interim payoff. Distinguish inherited structure from genuinely new features without forcing those phrases into section titles. Defend consequential assumptions by stating what they guarantee, what they exclude, why the admissible region is nonempty, and what relaxation would threaten.
+8. Present complete-information, mechanism-removed, fixed-lever, no-information, closest-paper, or first-best benchmarks according to the separate analytical jobs they perform. Recover a structurally nested closest model at the appropriate restriction whenever the claimed relationship requires it. Order the analysis cumulatively: characterize the receiver or operational response, derive actor preference alignment, solve the focal instrument with other levers fixed, jointly endogenize the levers, compare benchmark and stakeholder outcomes, then examine extensions or selection when relevant.
+9. Write every formal result with `references/result-writing-protocol.md`. Preserve the exact conditions and verdict from the audit ledger. Give every proposition and corollary an interpretive discussion; a headline result normally needs one or two substantive paragraphs covering the economic content, mechanism, benchmark or predecessor, and decision relevance. Add a verified literature comparison when the result materially agrees with, reverses, or qualifies an existing conclusion. Use continuous scholarly prose by default; do not mechanically repeat labeled paragraphs after every result.
+10. Put full proofs in the appendix by default when that protects the economic narrative, while retaining the key derivation or proof logic in the main text when readers need it to understand the mechanism. Mark formal results as new, adapted, specialized, or inherited when provenance matters, and cite the source directly for a reused result. Use inline proofs when the user or target format prefers them. Never replace proof with intuition.
+11. Generate figures and tables from the final formulas or data. Explain each visual's objects, feasible regions or comparison baselines, optimum, and economic use in the surrounding text. Map every panel, boundary, slope, jump, plateau, and no-trade region to the proposition or corollary that establishes it. When figures represent paired environments, explain the cross-figure comparison explicitly rather than leaving readers to infer it. Use comparison tables when conditions, instruments, policies, decision owners, or equilibrium strategies repeat across regimes. State whether a visual is analytical, numerical, illustrative, or empirical; never use it as proof.
+12. Use extensions to test whether the headline mechanism survives removal of a component, heterogeneity, imperfect discipline, alternative distributions, or another consequential relaxation. Also test whether an extension changes the feasible policy, preferred instrument, or allocation of decision rights. When closed-form joint optimization is unavailable, state the analytical frontier, explain the source of intractability, solve every relevant regime and boundary computationally, and distinguish numerical characterization from proof. State the proof obligation, mechanism verdict, and institutional-scope implication.
+13. Reuse the user's existing LaTeX source and style assets when supplied. Otherwise start from `assets/theory-paper-template.tex` and adapt minimally.
+14. Compile the LaTeX project, resolve errors and meaningful warnings, rerun bibliography and cross-references as needed, and inspect the rendered PDF page by page. Use the PDF workflow when available.
+15. Run the release checklist and a final claim-trace audit. Deliver only files that agree on notation, proposition numbering, citations, figures, and conclusions.
 
-# Research-core handoff
 
-Prefer:
+## Mandatory proposition-to-architecture reconstruction
 
-1. om-theory-model-auditor
-2. om-literature-positioning
-3. om-working-paper-builder
-4. om-journal-calibrator
+When restructuring an existing theory paper, do not treat the manuscript's current model hierarchy as fixed. Run the reconstruction protocol in `references/model-promotion-and-paper-reconstruction-protocol.md`.
 
-Before reconstruction, obtain or infer a research-release packet containing:
+The required sequence is:
 
-- verified model primitives;
-- formal-result inventory;
-- proposition-level novelty status;
-- 2–4 headline results;
-- results to demote/delete;
-- closest-paper boundaries;
-- unresolved claims;
-- recommended main-model promotion/demotion.
+`proposition-level novelty audit -> headline-result identification -> main-model promotion/demotion -> paper restructuring`.
 
-If the audit says a headline result is unverified, do not write it as established.
+### Result hierarchy
 
----
+Classify verified results as:
 
-# Core architectural principle
+- `Headline`;
+- `Core mechanism lemma`;
+- `Equilibrium consequence`;
+- `Benchmark`;
+- `Design implication`;
+- `Extension`;
+- `Robustness`;
+- `Appendix`;
+- `Merge / Delete`.
 
-A theoretical paper should be organized around its mechanism, not around the chronological order in which the author derived results.
+Do not give equal narrative weight to every proposition. Prefer a paper with two to four headline results and a visible dependency chain.
 
-Default progression:
+### Main-model promotion rule
 
-primitive / friction
-→ benchmark
-→ mechanism lemma
-→ headline proposition
-→ equilibrium consequence
-→ design / managerial implication
-→ extensions and robustness.
+Promote a benchmark, extension, or robustness model to the main model when it is the first model that directly represents the paper's claimed mechanism. This is especially important when the original main model holds the key behavioral object fixed or produces the headline pattern only through entry, funding, participation, or selection.
 
-The main model must be the simplest model that directly contains the core mechanism. It need not be the model with the cleanest closed form.
+### Main-model demotion rule
 
----
+Demote the current main model to benchmark, closed-form specialization, or appendix when it is retained mainly for tractability, closely reproduces prior logic, suppresses the central behavioral response, or is a special case of the mechanism-faithful model.
 
-# Stage 1 — Paper identity
+The main model should be the simplest model that directly contains the core mechanism, not necessarily the model with the cleanest closed form.
 
-Before writing sections, identify:
+### Main-model / closed-form duality
 
-## Research question
-One precise, decision-focused question.
+When a richer model carries the mechanism but a simpler model gives useful closed forms, use both:
 
-## Institutional tension
-What real institutional feature creates the decision problem?
+- **Main model:** mechanism-faithful and behaviorally correct.
+- **Closed-form benchmark/specialization:** used for exact thresholds, intuition, figures, and comparative statics.
 
-## Core mechanism
-Express as a causal chain:
-A increases → Force 1 strengthens and Force 2 weakens → regime switch → non-obvious operational consequence.
+Do not sacrifice conceptual accuracy to preserve closed-form convenience.
 
-## Headline results
-Select only verified headline results from the audit.
+### Conditional-versus-aggregate discipline
 
-## Closest-literature boundary
-For each headline result, state why it is not merely a known result in new notation.
+Keep conditional operational outcomes separate from extensive-margin and aggregate outcomes. If the prose claims that a policy changes postdecision effort, quality, delivery, service, or execution ability, that conditional object must be endogenous in the main model.
 
-The paper should be buildable from these five objects.
+### Benchmark jobs
 
----
+Every benchmark must isolate a specific familiar force, such as insurance without moral hazard, incentives without financing friction, full information, fixed decision rights, or a nested closest-paper case. A benchmark should establish the familiar intuition that the main mechanism later overturns or qualifies.
 
-# Stage 2 — Headline-result hierarchy
+### Closest-paper as benchmark design
 
-Do not give equal narrative weight to every formal statement.
+A close prior paper may be converted from a novelty threat into a theoretically motivated benchmark when its institutional design deliberately removes the focal conflict. Compare what resource, decision right, or state-contingent claim the prior mechanism protects or separates, and then show what changes when the present setting forces those objects to interact.
 
-Classify results as:
 
-- Headline
-- Core mechanism lemma
-- Equilibrium consequence
-- Benchmark
-- Design implication
-- Extension
-- Robustness
-- Appendix
-- Merge / Delete
+## Venue calibration
 
-Preferred ordering:
+- For MSOM/POM-oriented drafts, make the operational problem, institutional realism, mechanism, comparative statics, and managerial implications visible without weakening analytical rigor.
+- For Management Science-oriented drafts, sharpen the broader theoretical conversation and the general decision insight beyond the immediate setting.
+- For Operations Research-oriented drafts, emphasize formal novelty, generality, characterization, algorithmic or analytical depth, and proof completeness.
+- Treat these as positioning heuristics, not current journal rules. Verify submission requirements from official sources when the user requests venue compliance.
 
-1. Mechanism result — establishes the new strategic/operational force.
-2. Equilibrium consequence — shows how the mechanism changes endogenous decisions/performance.
-3. Design or contract result — shows how policy or another instrument responds to the mechanism.
-4. Optional major extension only if it introduces a second distinct mechanism.
+## Writing rules
 
-Do not lead with a formula, threshold, or optimal ratio if the deeper mechanism appears later.
-
----
-
-# Stage 3 — Main-model promotion/demotion
-
-This is mandatory.
-
-## Promotion test
-
-Promote a benchmark/extension/robustness model to the main model when it is the first model that directly delivers the paper's claimed mechanism.
-
-Strong signals:
-
-- the Introduction's headline claim is represented only in the extension;
-- the current main model holds the key behavioral object fixed;
-- the current main model produces an aggregate shape only through entry/selection, while the extension changes conditional behavior itself;
-- the extension contains the primitive conflict readers should remember;
-- the richer model remains analytically interpretable.
-
-## Demotion test
-
-Demote a current main model when:
-
-- it is retained mainly for closed form;
-- its contribution is close to prior literature;
-- it suppresses the core behavioral mechanism;
-- it is best used to isolate one channel;
-- it is a special case of the new main model.
-
-Possible destinations:
-- benchmark;
-- closed-form specialization;
-- appendix;
-- robustness section.
-
-Non-negotiable rule: do not keep the tractable model as the main model if doing so makes the contribution statement conceptually inaccurate.
-
----
-
-# Stage 4 — Benchmark design
-
-Every benchmark must have a job.
-
-Good benchmark jobs:
-
-- remove moral hazard to isolate insurance;
-- remove financing friction to isolate incentives;
-- remove information asymmetry to isolate operational distortion;
-- fix a decision variable to isolate a strategic response;
-- recover the closest prior paper as a nested case.
-
-A benchmark should answer: What monotone or familiar intuition holds before the new mechanism is introduced?
-
-Then the main model should overturn, qualify, or reorganize that intuition.
-
-Avoid benchmark sections that merely accumulate algebra.
-
----
-
-# Stage 5 — Proposition architecture
-
-Use a layered sequence.
-
-Before a headline proposition, use lemmas for:
-- best responses;
-- monotonic schedules;
-- feasibility bounds;
-- threshold properties;
-- comparative-static building blocks.
-
-Then explain what the lemma means economically.
-
-For each major proposition present:
-
-## Formal result
-The exact proposition.
-
-## Equilibrium meaning — What
-What behavior, regime, or decision occurs?
-
-## Economic mechanism — Why
-Which opposing forces create the result?
-
-## Operational / managerial implication — How
-What should a platform, firm, intermediary, or policymaker do differently?
-
-## Boundary
-When does the result fail, reverse, or become slack?
-
-## Proof logic
-Give the shortest transparent reasoning in the main text; move long algebra to the appendix unless the derivation itself is the contribution.
-
-Default sequence:
-Result → Mechanism → Implication.
-
-Do not present pages of equations and postpone interpretation.
-
----
-
-# Stage 6 — Novelty-aware restructuring
-
-Paper architecture must reflect proposition-level novelty.
-
-## Demote by default
-- known benchmark results;
-- reparameterizations;
-- special cases;
-- interior optima produced by crossing monotone constraints;
-- threshold formulas with no new mechanism;
-- robustness to alternative distributions;
-- numerical illustrations of already-proven results;
-- platform-optimal policies that mechanically maximize a previously established performance curve;
-- results already central in the closest paper.
-
-## Promote when verified
-- a new behavioral mechanism;
-- a new strategic reversal;
-- a new endogenous constraint interaction;
-- a new state-contingent contract effect;
-- a result that changes conditional behavior rather than only aggregate selection;
-- a design comparison that reveals why an existing institution avoids or creates the mechanism.
-
-Shape warning: never frame the contribution as merely U-shaped, inverted-U, interior optimum, threshold, or nonmonotonicity. Frame the contribution as the economic reason the shape exists.
-
----
-
-# Stage 7 — Full-paper structure
-
-Default structure:
-
-## 1. Introduction
-- phenomenon and decision problem;
-- institutional tension;
-- gap relative to closest literature;
-- model in one compact paragraph;
-- 2–4 headline findings;
-- contributions by mechanism, not by section.
-
-## 2. Institutional Background and Related Literature
-- only institutional facts needed for the mechanism;
-- closest-paper comparisons;
-- explicit mechanism boundary;
-- no broad citation catalogue.
-
-## 3. Model
-- players and timing;
-- information;
-- actions and constraints;
-- economic meaning of primitives;
-- equilibrium concept.
-
-The main model here must already contain the core mechanism.
-
-## 4. Benchmarks
-Each benchmark isolates one familiar force.
-
-## 5. Main Mechanism
-- lemmas that construct opposing forces;
-- first headline proposition;
-- regime classification if useful.
-
-## 6. Equilibrium / Campaign / Market Consequences
-- endogenous price, target, quantity, funding, entry, coverage, welfare, or other decision consequences;
-- second headline result.
-
-## 7. Design / Contract Architecture
-- compare alternative mechanism designs;
-- ask what aspect of the institution should change, not merely what parameter value is optimal.
-
-## 8. Major Extension
-Use only for a substantively distinct mechanism, such as external finance, competition, information rights, or dynamic timing.
-
-## 9. Managerial and Policy Implications
-Synthesize implications; do not repeat proposition text.
-
-## 10. Conclusion
-Return to the mechanism and boundary, not a section-by-section summary.
-
-## Appendix / Electronic Companion
-- long proofs;
-- closed-form special cases;
-- general-distribution robustness;
-- numerical verification;
-- additional comparative statics;
-- secondary extensions.
-
----
-
-# Stage 8 — Closest-paper integration
-
-For each closest paper ask:
-
-1. What friction does it solve?
-2. What instrument does it use?
-3. What does it deliberately hold fixed or protect?
-4. Which assumption removes the present paper's mechanism?
-5. Can its design serve as a benchmark or alternative architecture?
-
-A threatening prior paper can become a theoretically motivated benchmark.
-
-Strong comparison logic:
-
-Prior design separates resource A from governance instrument B.
-
-Present setting forces A and B to compete for the same resource.
-
-This is stronger than saying the papers use different variables.
-
----
-
-# Stage 9 — Conditional vs. aggregate outcome discipline
-
-Distinguish:
-
-- conditional operational outcome;
-- entry/funding/participation probability;
-- aggregate realized outcome.
-
-For example, probability of delivery conditional on funding is not the same object as probability of funded-and-delivered.
-
-If the paper claims that a mechanism reduces postfunding fulfillment ability, the main model should make conditional fulfillment endogenous.
-
-Do not let an aggregate selection effect masquerade as a behavioral mechanism.
-
----
-
-# Stage 10 — Main-model / closed-form duality
-
-When the richer model carries the mechanism but a simpler model provides closed form, use two layers.
-
-## Main model
-Mechanism-faithful and behaviorally correct.
-
-## Closed-form specialization / benchmark
-Analytically transparent and useful for:
-- exact thresholds;
-- policy formulas;
-- intuition;
-- figures;
-- comparative statics.
-
-This preserves tractability without sacrificing conceptual accuracy.
-
----
-
-# Stage 11 — Contribution discipline
-
-Before finalizing, run a claim-strength audit.
-
-Do not write:
-
-- first paper to study X without verified evidence;
-- deferred payment has an interior optimum as a core contribution when prior work already optimizes it;
-- capital constraints matter when prior work already includes them;
-- we endogenize behavior if the closest paper already has an endogenous-quality or effort extension;
-- more protection reduces fulfillment if the model only reduces funding probability.
-
-Prefer exact mechanism claims.
-
-A useful template:
-
-The contribution is not the existence of an interior policy, but the fact that the policy simultaneously changes the incentive to take an action and the resource capacity to execute that action.
-
----
-
-# Stage 12 — Writing standards
-
-## Introduction
-Answer:
-1. Why does the phenomenon matter?
-2. What tension is missing from prior work?
-3. What is the central mechanism?
-4. What are the headline results?
-5. Why are they new relative to the closest papers?
-
-Do not list every proposition.
-
-## Literature review
-Organize around mechanism boundaries, not citation categories alone.
-
-## Model assumptions
-For every important assumption explain:
-- institutional basis;
-- analytical role;
-- whether essential;
-- where relaxed.
-
-## Proposition discussion
-After each major proposition use:
-- equilibrium description;
-- mechanism;
-- managerial implication;
-- boundary/qualification when needed.
-
-## Mathematical exposition
-Use the least notation that preserves rigor.
-Prefer economic labels for thresholds and regimes.
-Avoid repeating the same equation in prose.
-
----
-
-# Stage 13 — Reconstruction checklist
-
-Before delivering a full working paper verify:
-
-## Model
-- main model contains the headline mechanism;
-- timing and constraints are consistent;
-- headline propositions passed the model audit.
-
-## Result hierarchy
-- 2–4 headline results only;
-- benchmarks have explicit jobs;
-- extensions do not compete with the main result;
-- robustness does not occupy unnecessary main-text space.
-
-## Novelty
-- each headline has a proposition-level closest-paper contrast;
-- inherited results are labeled as benchmark or mechanism;
-- new formulas are not confused with new theory.
-
-## Narrative
-- Introduction headline order matches Results section order;
-- literature boundary matches the mechanism actually modeled;
-- proposition discussions use result → mechanism → implication;
-- conclusion restates the mechanism, not the table of contents.
-
-## Appendix
-- full proofs are complete;
-- demoted results remain available where useful;
-- robustness is organized by the assumption relaxed.
-
----
-
-# Stage 14 — LaTeX and theorem structure
-
-For OM-style analytical manuscripts, prefer consistent environments:
-
-- Assumption
-- Lemma
-- Proposition
-- Corollary
-
-Default result flow:
-
-Lemma → interpretation → Proposition → mechanism → managerial implication.
-
-Proof placement:
-- short proof after a result if it materially helps understanding;
-- long algebra in appendix/e-companion;
-- never omit conditions needed for the proof.
-
-If an existing MSOM-style LaTeX protocol or author template is available, preserve it unless the target journal requires otherwise.
-
----
-
-# Output format
-
-When reconstructing a paper provide:
-
-## 1. Reconstruction diagnosis
-- old paper identity;
-- new core mechanism;
-- why the old hierarchy is suboptimal.
-
-## 2. Promotion/demotion map
-Existing item | New role | Reason
-
-## 3. New headline-result hierarchy
-For each headline:
-- formal content;
-- mechanism;
-- closest-paper boundary;
-- managerial/economic significance.
-
-## 4. New section architecture
-Give the complete ordered section/subsection outline.
-
-## 5. Rewritten manuscript
-When requested, implement the architecture in the actual manuscript rather than merely describing it.
-
-## 6. Consistency audit
-Confirm:
-- all Introduction claims appear in the main model;
-- all headline claims are verified;
-- terminology and symbols are consistent;
-- demoted results no longer appear as contributions.
-
----
-
-# Integration rule
-
-- om-theory-model-auditor decides whether results are correct and eligible for promotion.
-- om-literature-positioning substantiates novelty against the broader literature.
-- om-working-paper-builder decides where verified results belong and reconstructs the manuscript.
-- om-journal-calibrator adjusts emphasis for the target venue only after the core architecture is stable.
-
-The builder may demote a result for narrative reasons, but may never promote a result that failed correctness or novelty gates.
-
-When in doubt, preserve the mechanism and sacrifice algebraic convenience.
+- Default to polished academic English for journal manuscripts unless the user requests another language.
+- Explain each result as `what happens`, `relative to which benchmark`, `why it happens`, `under which conditions`, and `how it changes the focal decision`.
+- Separate equilibrium description, formal mechanism, literature distinction, managerial implication, and proof conceptually, but integrate them into natural prose unless separate labels improve navigation.
+- Treat the formal results as a cumulative argument rather than isolated findings. State how each result uses, changes, reverses, or contrasts with an earlier result and why the next result is needed. If a comparative static is only a reverse traversal or reparameterization of an earlier policy map, say so instead of presenting it as a new information-design mechanism.
+- When a conclusion matches or opposes prior work, name the shared or reversed conclusion, compare the active constraints or marginal trade-offs, and explain why the mechanisms agree or differ. Do not force a literature comparison when no verified close analogue exists.
+- Introduce figures before they appear and interpret them afterward. The surrounding prose should tell the reader which formal result each panel displays, how movement along each axis maps into primitives, and what economic consequence the visual adds beyond the proposition statement.
+- Give each paragraph one dominant analytical function. Start with the claim, then supply the causal or comparative support; do not make the reader infer the point from algebra.
+- Use threshold language qualitatively in the introduction and exactly in propositions and the analysis. Do not overload the opening pages with formulas.
+- Preserve meaningful tension: when a parameter has opposing direct and strategic effects, state both before reporting the net equilibrium effect.
+- For information design, explain the causal chain as `state/prior -> posterior experiment -> receiver action -> sender payoff`; do not describe disclosure as merely “more” or “less” information when the active result is belief management or action matching.
+- When several levers interact, state whether substitution or complementarity refers to local marginal responses, a discrete regime switch, or the globally optimal policy path.
+- For a headline proposition, provide the mathematical trade-off, the economic mechanism, and a distinct behavioral interpretation when each adds information. Anticipate and answer the strongest plausible objection to a new instrument or mechanism.
+- Treat `optimal`, `preferred`, `dominates`, and `win-win` as audited terms. Name the objective, selection criterion, stakeholders, and parameter scope supporting them.
+- Use the strongest accurate claim, not the strongest rhetorically attractive claim.
+- Keep notation stable and define each symbol before use.
+- Avoid repetitive proposition summaries, mechanical `what/why/managerial implication` headings, generic transitions, unsupported institutional facts, and invented citations.
+- Preserve author choices and existing valid content when revising; provide a change map for structural rewrites.
+
+## Re-entry rules
+
+Return to `om-theory-model-auditor` when drafting reveals a new result, changed assumption, missing equilibrium region, altered threshold, or proof gap. Return to `om-literature-positioning` when the mechanism, headline result, target conversation, or closest-paper set changes materially.
+
+## Deliverables
+
+When requested, deliver:
+
+- a complete `.tex` manuscript and bibliography;
+- a compiled, visually inspected PDF;
+- source files for figures and tables;
+- appendices containing proofs, notation, robustness, and computational details;
+- a compact change map and unresolved-item list;
+- for structural rewrites, a promotion/demotion map showing which existing results became headlines, mechanism lemmas, benchmarks, extensions, appendices, or were merged/deleted;
+- the final claim ledger and citation-verification status.
+- when relevant, the policy-instrument-decision-rights map and stakeholder outcome ledger.
+- when relevant, the information-design contract, preference-alignment map, benchmark portfolio, formal-result provenance ledger, and analytical-versus-numerical status map.
+
+Do not label a manuscript submission-ready while critical proof, citation, compilation, or consistency issues remain.
