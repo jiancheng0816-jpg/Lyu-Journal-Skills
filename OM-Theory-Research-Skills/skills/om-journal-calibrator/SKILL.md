@@ -462,6 +462,27 @@ Use concrete paper-specific evidence rather than generic warnings.
 
 ---
 
+
+# Stage 6A — Narrative and main-text depth gate
+
+Before calibrating a theory manuscript as competitive for a top quantitative-management venue, audit not only correctness and novelty but also whether the main text carries a continuous scholarly argument.
+
+Check:
+
+- **Heading-independence:** would the analytical story remain intelligible if subsection titles were hidden?
+- **Transition quality:** does each major section close the previous question and motivate the next, or does the paper jump from result to result?
+- **Model narration:** are institutional actors, decisions, timing, information, and economic frictions explained in prose before formulas dominate?
+- **Institutional support:** are consequential primitives tied to verified reality or established modeling precedent where appropriate?
+- **Analytical thickness:** do headline results receive substantive mechanism, benchmark, boundary, and decision-relevance discussion in the main text?
+- **Formula/prose balance:** does mathematics formalize the story rather than substitute for it?
+- **Result hierarchy:** is space allocated according to contribution importance rather than equally across propositions?
+- **Appendix discipline:** are technical details moved out when they crowd out mechanism discussion, without hiding essential proof logic?
+
+Flag a paper as `research-core sound but presentation-underdeveloped` when the mathematics is correct and the novelty is defensible but the main text reads as a sequence of headings, formulas, and propositions.
+
+For Marketing Science and Management Science in particular, treat thin mechanism discussion and weak institutional narration as meaningful contribution-presentation risks rather than cosmetic writing issues.
+
+
 # Stage 7 — Pre-submission live audit
 
 Before declaring a manuscript submission-ready, **re-check current official journal sources**.
