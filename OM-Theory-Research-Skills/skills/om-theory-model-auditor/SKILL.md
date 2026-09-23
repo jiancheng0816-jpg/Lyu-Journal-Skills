@@ -178,6 +178,46 @@ Do not use confidence language as a substitute for these verdicts.
 - Do not upgrade a robustness exercise into a general theorem without proving the relevant class of primitives.
 - When correcting a result, revise not only its statement but also its regime name, benchmark contrast, mechanism paragraph, figure, introduction finding, and conclusion claim.
 
+
+## Economic-meaning and exposition-integrity audit
+
+Correct mathematics is necessary but not sufficient for a theory result to survive paper-level audit. Add the following checks without taking over the builder's prose-writing role.
+
+### Primitive-to-reality audit
+For every consequential primitive, state:
+- the economic object it represents;
+- whether that interpretation is internally coherent with timing and information;
+- whether the paper supplies credible institutional or literature support when the object is externally factual;
+- whether the claimed mechanism depends on an interpretation narrower than the equation itself.
+
+Flag assumptions that are mathematically convenient but economically under-explained.
+
+### Mechanism-separation audit
+When two comparative statics have the same sign, or the same comparative static appears in different regimes, verify whether the active mechanism is actually the same. If not, require separate labels and separate interpretation. Do not allow headings alone to create a false impression of mechanistic distinction.
+
+### Narrative-dependency audit
+Construct a result dependency chain:
+`benchmark -> unresolved tension -> lemma -> proposition -> implication -> next unresolved tension`.
+Flag:
+- propositions that appear without an economically motivated question;
+- a new subsection that does not logically follow from the prior result;
+- a headline result whose interpretation is carried mainly by its section title;
+- repeated comparative statics that are reverse traversal/reparameterization rather than new results.
+
+### Main-text sufficiency audit
+For each headline proposition, verify that the main text explains:
+1. what equilibrium object changes;
+2. which forces generate the result;
+3. which constraint/threshold determines the regime;
+4. why the result differs from the relevant benchmark;
+5. what the result implies for the focal decision or observable behavior.
+
+If the paper contains only the theorem and proof logic, mark the result `mathematically verified but narratively underdeveloped`.
+
+### Reality-sensitive assumption audit
+If an assumption carries a central behavioral interpretation, test whether the same theorem can be stated under a weaker reduced-form condition. Prefer a general economic condition in the theorem and use the parametric assumption as one microfoundation or specialization.
+
+
 ## Handoff contract
 
 Before handing results to `om-working-paper-builder`, provide:
