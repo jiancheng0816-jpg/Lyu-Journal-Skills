@@ -175,6 +175,47 @@ A close prior paper may be converted from a novelty threat into a theoretically 
 - Avoid repetitive proposition summaries, mechanical `what/why/managerial implication` headings, generic transitions, unsupported institutional facts, and invented citations.
 - Preserve author choices and existing valid content when revising; provide a change map for structural rewrites.
 
+
+## Narrative continuity, model narration, and analytical-depth standard
+
+Apply these requirements whenever building or structurally reconstructing a theory working paper.
+
+### Heading-independence test
+- Section and subsection headings are navigation aids, not substitutes for argument.
+- A reader who temporarily ignores the headings should still be able to follow why each paragraph and result follows from the previous one.
+- Insert substantive transition paragraphs at major analytical turns. A transition should state what the previous result establishes, what remains unresolved, and why the next model/result is needed.
+- Do not stack `heading -> formula -> proposition -> new heading` without prose that closes one analytical question and opens the next.
+
+### Model section: narrative first, formulas second
+- Introduce the institutional setting, actors, timing, decisions, information, and economic friction in prose before presenting notation.
+- For every consequential primitive or assumption, provide: (i) its real-world interpretation, (ii) the institutional observation or verified literature that supports using it, (iii) the modeling role it plays, and (iv) what would change if it were relaxed.
+- Do not let the Model section read like a notation dictionary. Equations should formalize an already explained economic object.
+- When a reduced-form primitive compresses several real objects, explain that compression explicitly and identify which comparative statics inherit that interpretation.
+- Prefer a complete verbal event timeline before a formal timeline or payoff system.
+
+### Main-text analytical depth
+- Main analysis must contain more than theorem statements and proof-adjacent algebra. Before each headline result, motivate the unresolved economic question and identify the competing forces.
+- After a headline proposition, normally provide enough prose to cover: the equilibrium content, the causal mechanism, the comparison to the relevant benchmark or predecessor, the role of binding constraints/boundaries, and the managerial/empirical implication.
+- Use one to three substantive follow-up paragraphs as needed; do not force a fixed template when a continuous argument reads better.
+- Explain why a threshold exists before emphasizing its closed form. Explain why a comparative static can reverse before reporting the derivative sign.
+- When two results share a parameter but arise from different mechanisms, explicitly separate those mechanisms rather than relying on different subsection titles.
+- Keep proof details in the appendix when they interrupt the economic narrative, but retain the key inequality, envelope argument, or binding-constraint logic required to understand the result.
+
+### Bridge-paragraph protocol
+At the end of each major subsection, write a short bridge that answers:
+1. What did this subsection establish?
+2. Which maintained assumption or missing mechanism limits that result?
+3. What question does the next subsection answer?
+
+Do not use generic transitions such as "We next consider..." unless the analytical dependency has already been stated.
+
+### Main-text thickness gate
+Before release, flag a manuscript as narratively underdeveloped if any headline result is supported mainly by a title, displayed equation, proposition, and a single short interpretation paragraph. Expand the economic argument before adding more propositions.
+
+### Reality-and-literature anchoring rule
+Institutional claims and model justifications must be source-backed when they are externally verifiable. Use literature to justify modeling choices, not merely to decorate the introduction. Never invent an institutional fact to rationalize a convenient assumption.
+
+
 ## Re-entry rules
 
 Return to `om-theory-model-auditor` when drafting reveals a new result, changed assumption, missing equilibrium region, altered threshold, or proof gap. Return to `om-literature-positioning` when the mechanism, headline result, target conversation, or closest-paper set changes materially.
