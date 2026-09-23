@@ -129,6 +129,39 @@ Produce:
 
 Do not draft a full manuscript unless the user separately invokes `om-working-paper-builder`.
 
+
+## Institutional anchoring and model-justification protocol
+
+Literature positioning must support the model as well as the contribution claim.
+
+### Primitive evidence map
+For each consequential modeling primitive, build a compact evidence map with:
+- primitive / institutional feature;
+- real-world interpretation;
+- strongest supporting literature or authoritative institutional source;
+- what the source actually establishes;
+- what remains a modeling abstraction.
+
+Use this map to strengthen the Model section, not just the Related Literature section.
+
+### Narrative use of literature
+- Cite prior work at the point where it motivates an assumption, outside option, decision right, information structure, or pricing institution.
+- Distinguish `evidence for the phenomenon` from `precedent for the modeling abstraction`; a paper can support one without supporting the other.
+- Do not turn the Model section into a citation catalogue. One or two high-proximity sources are preferable to a long list when the modeling role is the same.
+- When institutional facts come from firms, platforms, rate cards, contracts, or policy documents rather than academic papers, verify them from authoritative current sources and label them as institutional evidence.
+
+### Contribution-to-model bridge
+The literature review should end each major stream by explaining which unresolved modeling object enters the present model. Avoid a literature section that merely lists differences and then restarts the paper from scratch in the Model section.
+
+### Closest-paper transition rule
+When a closest paper becomes a benchmark or extension, state explicitly:
+1. which decision right/instrument/information structure is shared;
+2. which element is switched off in that paper or benchmark;
+3. why restoring the focal element creates the next analytical question.
+
+This bridge should later reappear naturally in the model/analysis rather than only in the novelty table.
+
+
 ## Handoff contract
 
 Pass to `om-working-paper-builder`:
